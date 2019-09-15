@@ -1,0 +1,20 @@
+depto,superficie
+Artigas,11928
+Canelones,4536
+Cerro Largo,13648
+Colonia,6106
+Durazno,11643
+Flores,5144
+Florida,10417
+Lavalleja,10016
+Maldonado,4793
+Montevideo,530
+Paysandú,13922
+Río Negro,9282
+Rivera,9370
+Rocha,10551
+Salto,14163
+San José,4992
+Soriano,9008
+Tacuarembó,15438
+Treinta y Tres,9529

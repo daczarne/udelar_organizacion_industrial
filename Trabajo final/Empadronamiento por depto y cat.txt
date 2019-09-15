@@ -1,0 +1,76 @@
+depto,cat,cant
+Artigas,A,178
+Artigas,B,9
+Artigas,C,301
+Canelones,A,2440
+Canelones,B,75
+Canelones,C,2628
+Canelones,E,30
+Cerro Largo,A,393
+Cerro Largo,B,11
+Cerro Largo,C,834
+Cerro Largo,E,6
+Colonia,A,586
+Colonia,B,22
+Colonia,C,980
+Colonia,E,19
+Durazno,A,259
+Durazno,B,17
+Durazno,C,536
+Durazno,E,7
+Flores,A,104
+Flores,B,10
+Flores,C,169
+Flores,E,25
+Florida,A,244
+Florida,B,10
+Florida,C,406
+Florida,E,6
+Lavalleja,A,233
+Lavalleja,B,8
+Lavalleja,C,257
+Lavalleja,E,6
+Maldonado,A,1240
+Maldonado,B,30
+Maldonado,C,2247
+Maldonado,E,18
+Montevideo,A,7677
+Montevideo,B,163
+Montevideo,C,4145
+Montevideo,E,53
+Paysandú,A,400
+Paysandú,B,14
+Paysandú,C,810
+Paysandú,E,10
+Río Negro,A,176
+Río Negro,B,11
+Río Negro,C,364
+Río Negro,E,16
+Rivera,A,209
+Rivera,B,16
+Rivera,C,364
+Rivera,E,3
+Rocha,A,307
+Rocha,B,15
+Rocha,C,448
+Rocha,E,4
+Salto,A,529
+Salto,B,18
+Salto,C,1041
+Salto,E,2
+San José,A,527
+San José,B,32
+San José,C,784
+San José,E,7
+Soriano,A,293
+Soriano,B,20
+Soriano,C,645
+Soriano,E,10
+Tacuarembó,A,313
+Tacuarembó,B,11
+Tacuarembó,C,696
+Tacuarembó,E,3
+Treinta y Tres,A,168
+Treinta y Tres,B,6
+Treinta y Tres,C,393
+Treinta y Tres,E,1

@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Objetivos del trabajo}{3}{0}{1}
+\beamer@sectionintoc {2}{Descripci\IeC {\'o}n del mercado}{4}{0}{2}
+\beamer@sectionintoc {3}{Hip\IeC {\'o}tesis}{12}{0}{3}
+\beamer@sectionintoc {4}{Pros y cons de liberalizar el precio}{14}{0}{4}
+\beamer@sectionintoc {5}{Capacidad de contralor}{15}{0}{5}
+\beamer@sectionintoc {6}{Reflexiones preliminares}{16}{0}{6}

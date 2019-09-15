@@ -1,0 +1,21 @@
+Discutir el actual sistema de bonificaciones a las EESS 
+
+qué regulación maximizaría el bienestar y procuraría eficiencia en el mdo?
+se debe reformular la paramétrica x hetero de costos EESS?
+se debe desregular el mdo para que se acerque a comp perfecta?
+
+Objetivos trabajo
+
+Pretendemos aportar elementos para una discusion mas
+rigurosa sobre si mejorar la regulacion actiual del sistema de bonicaciones que perciben las EESS o alternativamente,
+proponer un sistema que se aproxime a la desregulacion del precio.
+
+Aportar evidencia sobre el sistema actual de venta al público de 
+
+
+Descripción mdo
+Hipótesis
+Tipo de juego
+Reflexiones preliminares
+
+\includegraphics[scale=0.5]{imagen1.png}

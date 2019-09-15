@@ -1,0 +1,39 @@
+Analizar mercado, explicar razgos a partir de modelos vistos en el curso.
+10 carillas
+Describir principales agentes, reglas que lo rigen.
+Desarrollar hipótesis (basadas en los modelos) que expliquen comportamiento de agentes y resultados observados en el mercado
+Recomendar medidas de política.
+
+Introducción
+Descripción del mercado
+Paramétrica
+Hipótesis
+Pros cons
+Liberalizamos?
+
+Hetero
+Camión - reconoce litros vendidos pero no costos de tener camión
+EESS sin camión - venden menos
+		- tienen más pisteros
+Horas extras - fenómenos común, no reconocido
+Seguridad
+Ventas tarjeta - costo adicional no reconocido
+
+
+
+Distribuidoras a EESS - discr 3er grado
+Barreras a entrada y salida
+Regulación de la tasa de beneficios - como lo costos están cubiertos (para la "tipo"), no genera incentivos a la eficiencia en el uso de los recursos. Firmas no minimizan costos. Ineficiencia. Si la paramétrica, o lo que fuera que utilizara ANCAP para fijar el margen, reflejaba mejor los costos en el pasado, ¿inducía a esta situación? ¿Estacioneros se quejan porque se les acabó la fiesta?
+ Realidad: EESS con menores costos están ganando, estaciones con mayores costos están perdiendo.
+
+Objetivos ANCAP
+Problemas agente-principal
+	  economía política
+
+Presupuesto equilibrado 
+	- DF
+	- Aportar a rentas
+	- Estabilidad macroeconómica 		
+Eficiencia productiva
+Objetivo "social" - bienestar de las familias/hogares
+Objetivo productivo - combustible para la industria y el agro - descuentos

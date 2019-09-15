@@ -1,0 +1,61 @@
+\documentclass[spanish,A4,11pt]{article}
+
+\usepackage[left=2cm,top=2cm,right=2cm,bottom=2cm]{geometry} 
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage[spanish]{babel}
+\usepackage{graphicx} 
+\usepackage{placeins}
+\usepackage{makeidx}
+\usepackage{multirow, array}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage[vlines]{tabularht}
+\usepackage{fancyhdr}
+
+\setlength{\parskip}{1em}
+
+\pagestyle{fancy}
+\lhead{HIPÓTESIS} 
+\rhead{Daniel Czarnievicz, Paula Pereda, Joaquín Pereira}
+
+\begin{document}
+\section{Introducción}
+La bonificación la percibe el propietario de la estación de servicio cuando recibe el combustible de su respectiva distribuidora. Esta opera entonces como un descuento en la factura. El esquema de bonificaciones que reciben las estaciones de servicio (EESS) funciona de la siguiente manera:
+\begin{itemize}
+\item ANCAP determina el monto de la misma, fijando el máximo precio intermedio (al cual reciben el combustible las estaciones), y el máximo precio final (al cual lo venden). Para computar dicho precio, ANCAP extrajo la estructura de costos de una muestra de 52 estaciones (de las cerca de 500 que hay en el país). Con dicha muestra construyó una estación ``tipo", y luego, negoció en una segunda instancia con la UNVENU (Unión Nacional de Vendedores de Nafta) los costos de esta estación ``tipo".
+\item La paramétrica reconoce entonces los siguientes componentes: la variación de precios mediante el IPC, el salario de los pisteros, el alquiler del predio, la variación del tipo de cambio, el precio de la gasolina súper 95, el volumen de litros vendidos por la estación promedio y los costos totales de la estación ``tipo". La bonificación puede ser representada según CPA FERRERE (2016) por la siguiente ecuación:
+$$ B_1=B_0\ldotp \frac{Vt_0\ldotp f(x)}{Vt_1 \ldotp Ct_0} $$
+siendo $f(x) = \frac{IPC_t}{IPC_0}\times 458616.2 + \frac{SP_t}{SP_0}\times310736.8 + \frac{URA_t}{URA_0}\times 209952.4 + \frac{USD_t}{USD_0}\times 9531.3 + \frac{Pnafta_t}{Pnafta_0}\times 41484.3$ 
+
+donde: 
+	\begin{itemize}
+	\item $B_1$: bonificación de gasolinas para el período de ajuste
+	\item $B_0$: bonificación de gasolinas para el período de referencia
+	\item $IPC_t$: IPC correspondiente a tres meses antes del ajuste
+	\item $IPC_0$: IPC correspondiente al mes inicial (octubre de 2013)
+	\item $SP_t$: salario mensual del pistero vigente al mes anterior
+	\item $SP_0$: salario mensual del pistero vigente a partir del 1/12/2013
+	\item $URA_t$: URA (unidad reajustable de alquiler) de cuatro meses antes del ajuste
+	\item $URA_0$: URA de setiembre 2013
+	\item $USD_t$: cotización del dólar interbancario promedio de dos meses antes del ajuste
+	\item $USD_0$: cotización del dólar interbancario promedio de noviembre de 2013
+	\item $Pnafta_t$: precios gasolina súper 95 del mes anterior al ajuste 
+	\item $Pnafta_0$: precios gasolina súper 95 vigente a noviembre 2013
+	\item $VT_1$: volúmenes vendidos por la estación promedio, en base a los retiros de combustible del año móvil cerrado dos meses antes del ajuste dividido las EESS activas en el semestre móvil cerrado dos meses antes del ajuste
+	\item $VT_0$: volúmenes vendidos por la estación promedio, en base a los retiros de combustible del año móvil cerrado a noviembre de 2013 dividido las EESS activas en el semestre móvil cerrado a noviembre de 2013
+	\item $CT_0$: costos totales de EESS tipo a valores de enero de 2014
+	\end{itemize}
+\item Hasta junio de 2013, la parámetrica se actualizaba trimestralmente, a partir de esa fecha la actualización se vuelve mensual. 
+\item En agosto de 2016, la paramétrica es congelada quedando fija la bonificación por litro vendido que reciben las EESS por tiempo indefinido. 
+\item En enero de 2017, ANCAP y la UNVENU negocian un ajuste trimestral de la bonificación en base al IPC y al IMS, con tres meses de rezago.
+\item Adicionalmente, a través del decreto 131/016 de mayo del 2016 se vuelve obligatorio el cobro a través de medios electrónicos en el horario de 22 a 6 horas. De 6 a 8 y de 20 a 22 horas, se permite un cobro máximo de \$800 (o su equivalente en moneda extranjera) en efectivo y de 8 a 20 horas se permite cualquier medio de pago. A partir del primero de septiembre del presente año la última disposición queda sin efecto y el cobro máximo en efectivo será el mismo que rige actualmente en las franjas de dos horas. Esta decisión del Poder Ejecutivo tiene un impacto directo en la rentabilidad de los estacioneros atado a la localización geográfica y al tamaño de la estación. 
+\end{itemize}
+
+\section{Hipótesis}   
+Los propietarios de EESS han manifestado su descontento con la situación vigente de la paramétrica, lo cual a priori, no representaría una falla de mercado. Sin embargo, intuitivamente, la paramétrica y su posterior congelamiento abre las siguientes interrogantes: ¿qué regulación maximizaría el bienestar y procuraría la eficiencia en el mercado? ¿Se debe reformular la paramétrica para que esta se aproxime a la heterogeneidad de las estructuras de costos de las EESS (con franjas o grupos según características especiales)? ¿O se debe desregular el mercado para acercarlo a uno que funcione en competencia perfecta, con un régimen de subsidios para aquellas estaciones alejadas y con características peculiares (por ejemplo: estaciones fronterizas)? Para responder estas preguntas, es menester primero resolver ciertas cuestiones relacionadas a la pertinencia de la regulación en este mercado. A su vez, se debe estudiar el impacto que la concentración de EESS tiene en algunas zonas del país (especialmente en Montevideo y el Área Metropolitana). También se deben estudiar las consecuencias que las regulaciones que efectúa ANCAP sobre los costos y los precios de venta que enfrentan las EESS tienen en los incentivos de estas, dado que, por un lado, ANCAP fija el margen bruto de ganancia de las EESS regulando el precio intermedio (el costo por litro de combustible para las EESS). Simultáneamente, ANCAP fija el precio máximo al que las EESS pueden vender al público. La hipótesis de este trabajo es que dada  la actual paramétrica, en su versión ``congelada'' y ajustada mediante el IPC y el IMS, existe margen para hacer una mejora en términos de eficiencia.
+
+\end{document}

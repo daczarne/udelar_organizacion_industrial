@@ -1,0 +1,469 @@
+\documentclass[spanish,A4,12pt]{article}
+
+\usepackage{subfig}
+\usepackage{blindtext}
+\usepackage[inline]{enumitem}
+\usepackage{placeins}
+\usepackage[labelfont=bf]{caption}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{tasks}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{forest}
+\usepackage[ansinew]{inputenc}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage[spanish,es-lcroman]{babel}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{delarray}
+\usepackage{dcolumn}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{psfrag}
+\usepackage{multirow,hhline}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{wasysym}
+\usepackage{booktabs}
+\usepackage{lscape}
+\usepackage{url}
+\usepackage{nicefrac}
+\usepackage{setspace}
+\usepackage[pdftex=true,bookmarks=true,bookmarksopen=false]{hyperref}
+\usepackage {hyperref}
+\usepackage[sf,sl,outermarks]{titlesec}
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=blue
+  }
+\hypersetup{pdfborder = {0 0 0 0}}%Para eliminar los cuadros de los links
+
+\setlength{\parindent}{0.5in}
+\setlength{\parskip}{1em}
+
+\titleformat{\section}
+{\normalfont\Large\scshape\bfseries} {\thesection.}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\large\scshape\bfseries} {\thesubsection.}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalfont\scshape\bfseries} {\thesubsubsection.}{1em}{}
+
+\newcommand{\m}[1]{\mathbf{ #1 }}
+\newcommand{\p}{\partial}
+\newcommand{\pr}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\prv}[2]{{\partial #1}/{\partial #2}}
+
+\definecolor{respuesta}{rgb}{0.00,0.00,0.00}
+\newcommand{\re}[1]{\smallskip \textsc{Respuesta} \begin{sf}\\{ \textcolor{respuesta}{#1
+}} \end{sf}}
+
+\usepackage[left=2.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+\hyphenpenalty=15000 \pretolerance=2000 \tolerance=3000
+%\linespread{1.5}
+
+\setcounter{section}{0}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[section]
+\newtheorem{example}{Ejemplo}[section]
+\newtheorem{observation}{Observación}[section]
+\newtheorem{exercise}{Ejercicio}
+\newtheorem{problem}{Problema}
+\newtheorem{adexercise}{Ejercicio Adicional}
+
+\tikzset{
+	every picture/.append style={
+		execute at begin picture={\deactivatequoting},
+		execute at end picture={\activatequoting}
+	}
+}
+\tikzset{>=latex}
+
+\everymath{\displaystyle}
+\renewcommand{\arraystretch}{1.5}
+
+% Crea el símbolo matemático de diferencial
+\DeclareMathOperator*{\di}{\mathrm{d}\!}
+\def\at{
+  \left.
+  \vphantom{\int}
+  \right|
+}
+
+\addto\captionsspanish{\renewcommand{\figurename}{Gráfico}}
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+
+% Genera el estilo de página, incluyendo headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Organización Industrial} 
+\rhead{Czarnievicz, Pereda, Pereira}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%
+%%%% TITLE PAGE %%%%
+%%%%%%%%%%%%%%%%%%%%
+
+\linespread{1}
+\input{./titleT.tex}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% TABLE OF CONTENTS %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{roman}   % i, ii, iii, iv, ...
+
+\tableofcontents
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\pagenumbering{arabic}  % 1, 2, 3, 4, ...
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%% INTRODUCCIÓN %%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introducción}
+
+El precio del combustible uruguayo es el más caro de la región. ANCAP es la mayor empresa del Uruguay, que a la vez importa, produce, distribuye, comercializa y regula su propio mercado. La cúpula del monopolio multiproducto estatal es designada directamente por el Poder Ejecutivo, respondiendo al ciclo político, y tiene la tarea de cumplir objetivos presupuestales, contribuyendo a la estabilidad macroeconómica; sociales, brindando una serie de bienes y servicios que aporten al bienestar de las familias; productivos, ofreciendo, y subvencionando, el combustible que demandan la industria y el agro; y todo esto en un marco de eficiencia productiva y transparencia.
+
+Como reguladora, fija tanto el precio intermedio como el final de los combustibles. La bonificación que obtienen las 488 estaciones de servicio a lo largo y ancho del país se desprende de la paramétrica, una regla que pretende reflejar la estructura de costos de una estación ``tipo''. Dicha estación se construyó a partir de una muestra de 52 estaciones. No obstante, los costos no se derivaron directamente de la muestra sino de negociaciones entre la UNVENU (Unión de Vendedores de Nafta de Uruguay) y ANCAP.
+
+Intuitivamente, la construcción de una paramétrica a partir de una estación ``tipo'' parece problemática por la heterogeneidad en la estructura de costos, así como por las diferencias que pueden surgir a partir de la ubicación geográfica de las ESSS. Al mismo tiempo, no hay un protocolo establecido en caso de existir discrepancias entre la evolución de las variables que constituyen a la paramétrica y la paramétrica \textit{per se}.
+
+A fines del año pasado, desde ANCAP se propusieron dos medidas:
+\begin{enumerate*}[label={\alph*)},font={\color{red!50!black}\bfseries}]
+\item construir tres franjas de bonificaciones según el litraje vendido; 
+\item desregular el precio final de los combustibles. 
+\end{enumerate*} El objetivo de este trabajo es aportar elementos para una discusión más rigurosa sobre si mejorar la regulación del sistema de bonificaciones que perciben las estaciones de servicio o, alternativamente, proponer un sistema que se aproxime a la desregulación del precio.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% DESCRIPCIÓN DEL MERCADO %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Descripción del mercado}
+
+%%%%%%%%%%%%%%%%%%%
+%%%% LA OFERTA %%%%
+%%%%%%%%%%%%%%%%%%%
+
+\subsection{La oferta}
+
+La oferta en el mercado de los combustibles líquidos puede ser caracterizada como una de relaciones verticales en tres niveles. En primer lugar se encuentra ANCAP, el monopolio estatal encargado de importar y refinar el petróleo, la cual ocupa el lugar de la firma upstream. En segundo lugar se encuentran las tres distribuidoras: DUCSA (propiedad de ANCAP), Petrobras (estatal brasileña) y AXION (de capitales argentinos y chinos), quienes conforman las firmas midstream. Tanto el \textit{market share} de las tres distribuidoras, como la cantidad total de estaciones de servicio se han mantenido constante a través del tiempo, sugiriendo la existencia de barreras a la entrada y a la salida, así como una dinámica de competencia en el nivel midstream \textit{ex ante} \textbf{por} el mercado en lugar de una \textit{ex post} \textbf{en} el mercado. En este contexto, podemos considerar a DUCSA, Petrobras y AXION como monopolios en su propio mercado. Esta idea se refuerza con el hecho de que las estaciones de servicios (EESS, de aquí en adelante) no pueden cambiar de sello una vez que se encuentran operativas.
+
+El nivel downstream lo conforman las EESS. En el territorio nacional existen 488 EESS operadas por empresas privadas bajo el sello de la distribuidora correspondiente, las que se encargan de realizar la venta al público. En los \textbf{Gráficos \ref{fig:distnaca}} y \textbf{\ref{fig:distnacb}} se puede observar la distribución territorial de las EESS.\footnote{En la \textbf{Tabla \ref{table:estacionespordepto}} (ver anexo) se puede encontrar el detalle de las EESS por departamento, así como un desglose del parque automotor.} Las firmas pueden ser dueñas o no del predio en la cual funciona la estación.\footnote{Esto es importante por motivos que más adelante se explicarán.} El negocio de estas empresas no se limita a la venta de combustibles. Las EESS también ofrecen otros servicios conexos como ser lubricentros, lavaderos de vehículo, y tiendas de conveniencia.
+
+\begin{figure*}[htp] 
+	\caption{distribución geográfica de las EESS según distribuidora}
+    \centering
+    \subfloat[Territorio nacional]{%
+        \includegraphics[scale=.6]{mapaeess.png}%
+        \label{fig:distnaca}%
+        }%
+    \hfill%
+    \subfloat[Área metropolitana]{%
+        \includegraphics[scale=.41]{mapaeessmam.png}%
+        \label{fig:distnacb}%
+        }%
+        
+\textbf{Fuente:} elaboración propia e base a datos de la URSEA
+\end{figure*}
+
+%%%%%%%%%%%%%%%%%%%%
+%%%% LA DEMANDA %%%%
+%%%%%%%%%%%%%%%%%%%%
+
+\subsection{La demanda}
+
+Se pueden distinguir dos categorías de demandantes: las familias y hogares, para quienes los combustibles son un bien de consumo; y las empresas, para quienes los combustibles son un insumo. Las distintas curvas de demanda se caracterizan por ser relativamente inelástica, lo cual otorga a ANCAP un alto poder de mercado.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% DINÁMICA DEL MERCADO DE COMBUSTIBLES LÍQUIDOS %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Dinámica del mercado de combustibles líquidos}
+
+La cadena comienza cuando ANCAP importa el petróleo crudo. Este es entregado en la boya de José Ignacio y transportado por oleoducto hasta la refinería de La Teja, donde es convertido en sus distintos derivados: naftas, querosene, gasoil, lubricantes. Luego de refinado, el combustible es vendido a las distribuidoras: DUCSA, Petrobras, y AXION. DUCSA se encarga de vender al 59.22\% de las EESS, Petrobras se encarga de vender al 18.24\%, y AXION es quien vende al restante 22.54\% de las EESS. Las distribuidoras contratan empresas privadas de fletes, las cuales se encargan de transportar los productos a las EESS. El último eslabón de la cadena lo componen las EESS, quienes se encargan de vender el producto al consumidor final. El \textbf{Gráfico \ref{fig:diagrama}} muestra con mayor detalle la dinámica aquí explicada.
+
+\begin{figure}[H]
+	\caption{diagrama de la dinámica de los combustibles líquidos}
+	\centering
+	\includegraphics[scale=0.4]{imagen2.png} \\
+	\label{fig:diagrama} 
+	\vspace{0.2cm}
+	\noindent\textbf{Fuente:} Anuario 2011-2012 de la URSEA.
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% REGULACIÓN DEL MERCADO %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Regulación del mercado}
+
+Dadas las características del mercado, existe una fuerte regulación que podría dividirse en dos categorías. Por un lado, la regulación que refiere a la operativa y seguridad, y por otro lado, la regulación comercial y económica. En este trabajo nos referiremos a esta última.
+
+Dentro de la regulación comercial y económica se destacan dos actores. Por un lado se encuentra ANCAP. \footnote{Creado por la Ley N° 8764 con fecha 15/10/1931, artículo 1, inciso b, la cual establece que ANCAP es un monopolio legal multiproducto con el derecho exclusivo a la ``importación y refinación de petróleo crudo y sus derivados en todo el territorio de la República''.} El poder regulatorio de ANCAP queda de manifiesto en su capacidad de fijar precios. El precio intermedio es fijado a través de la paramétrica. Esta es la regla mediante la cual se fija la rentabilidad bruta de la venta de combustibles de las EESS. El precio final máximo es fijado por el Poder Ejecutivo (PE) mediante decretos ante solicitud del directorio de ANCAP. Este precio constituye el máximo precio que las EESS pueden cobrar al público, no indicándose una cota inferior. Debido a la ausencia de arbitraje, las distribuidoras tienen la posibilidad de practicar discriminación de tercer grado con las EESS, aplicando descuentos y facilidades de pago en función del tamaño y del litraje vendido. Esta situación se repite entre las distribuidoras y las EESS con los grandes consumidores. Estos descuentos, que incrementan la bonificación de las EESS, pueden ser considerados como subsidios indirectos que realiza ANCAP, y que no se ven reflejados en el precio final del combustible. No obstante, existen amplios subsidios para el gasoil en ciertos sectores.
+
+Adicionalmente, si bien el sector está sujeto a la regulación impositiva vigente en el país (IMESA, IVA, IRAE, etc.), las EESS fronterizas (ubicadas en un radio de 20 km de los pasos de frontera) gozan de una reducción del IMESI para ventas de hasta 50 litros de combustible, para hacerle frente al precio de las naftas argentinas y brasileñas. La última actualización, dada por la resolución 3966/2016 del PE, establece dicha reducción en 0\% para la frontera con Argentina y en 5\% para la frontera con Brasil. La reducción anterior se situaba en el orden del 24\% para ambos márgenes y su modificación se justificó en el aumento de precios constatado en los países vecinos.
+
+Por otra parte se encuentra la Unidad reguladora de los servicios de energía y agua (URSEA). Esta fue creada por la Ley N° 17.598, con fecha 13/12/2002, como órgano desconcentrado del PE con el fin de regular en materia de calidad, seguridad y defensa del consumidor, así como la posterior fiscalización. En el 2010 se realiza una importante revisión de los cometidos de la URSEA y, mediante la Ley Nº 18.719 de 27/12/2010, se eliminan de sus objetivos el fomento del nivel óptimo de inversión, la libre elección por los usuarios entre los diversos prestadores y la aplicación de tarifas que reflejen los costos económicos. Bajo este nuevo marco, sus funciones en el mercado a estudiar pasan a ser las de fiscalizar y controlar la calidad de los combustibles a lo largo de toda la cadena, y realizar estudios comparativos para saber si los valores fijados por ANCAP están en consonancia con los valores que las gasolinas tendrían si se las importara. Sin embargo, sus fallos no son vinculantes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% LA PARAMÉTRICA %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{La paramétrica}
+
+La bonificación la percibe el propietario de la estación de servicio cuando recibe el combustible de su respectiva distribuidora. Esta opera entonces, como un descuento en la factura. El esquema de bonificaciones que reciben las EESS funciona de la siguiente manera: ANCAP determina el monto de la misma, fijando el máximo precio intermedio (al cual reciben el combustible las estaciones) y el máximo precio final (al cual lo venden). Para computar dicho precio, ANCAP extrajo la estructura de costos de una muestra de 52 estaciones. Con dicha muestra construyó una estación ``tipo". Luego en una segunda instancia negoció con la UNVENU (Unión Nacional de Vendedores de Nafta) los costos de esta estación ``tipo". La paramétrica reconoce los siguientes componentes: la variación de precios mediante el IPC, el salario de los pisteros, el alquiler del predio, la variación del tipo de cambio, el precio de la gasolina súper 95, el volumen de litros vendidos por la estación promedio, y los costos totales de la estación ``tipo". \footnote{En 2016, ante un pedido de estudio por parte de la UNVENU, CPA FERRERE estimó la paramétrica. Los resultados de esta estimación pueden verse en el anexo.} 
+
+Hasta junio de 2013, la parámetrica se actualizaba trimestralmente, a partir de esa fecha la actualización se vuelve mensual. En agosto de 2016, la paramétrica es congelada quedando fija la bonificación por litro vendido que reciben las EESS por tiempo indefinido. En enero de 2017, ANCAP y la UNVENU negocian un ajuste trimestral de la bonificación en base al IPC y al IMS, con tres meses de rezago. En abril de este año, se actualizaron los márgenes que perciben las EESS, pero el margen de distribución aún no tiene contrato definido.
+
+A pesar del congelamiento la paramétrca presenta sendas deficiencias como instrumento para fijar precios. En primer lugar, las EESS seleccionadas en la muestra fueron las encargadas de brindar sus costos al ente público. Posteriormente, dichos costos fueron negociados de manera privada entre ANCAP y la UNVENU. Ambas situaciones generan incentivos a declarar costos mayores a los efectivos para así obtener un beneficio mayor. Costos mayores implican precios mayores, con la consecuente pérdida de bienestar de los consumidores. Por otra parte, las EESS presentan características tan heterogéneas entre sí que trabajar con una estación ``tipo" resulta problemático. Algunos aspectos a considerar son:
+\begin{itemize}
+\item Camión repartidor. Prácticamente la mitad de las EESS utilizan camiones para el reparto de combustible. Por un lado, esto incrementa la cantidad de litros vendidos pero, por otro lado, genera costos, no reconocidos en la paramétrica.
+\item Horas extra. Las EESS sin camión repartidor no solo venden menos combustible sino también utilizan en promedio una mayor cantidad de pisteros. Dado el modelo de negocio, es común que para cubrir todos los turnos las firmas recurran al uso de horas extras. Esta variable tampoco fue incluida en la construcción de la paramétrica, la cual considera únicamente el salario mensual del pistero (que trabaja 8 horas) proveniente de la negociación colectiva correspondiente.\footnote{Esta puede encontrarse en el laudo del Grupo 19, Subgrpo 10.}
+\item Seguridad. La contratación de personal de seguridad, así como el uso de equipos o remesas, es algo habitual y no está a consideración en la paramétrica.
+\end{itemize}
+
+Adicionalmente, a través del decreto 131/016 de mayo de 2016 se vuelve obligatorio el cobro a través de medios electrónicos en el horario de 22 a 6 horas. De 6 a 8 y de 20 a 22 horas, se permite un cobro máximo de \$800 (o su equivalente en moneda extranjera) en efectivo y de 8 a 20 horas se permite cualquier medio de pago. A partir del primero de septiembre del presente año la última disposición queda sin efecto y el cobro máximo en efectivo será el mismo que rige actualmente en las franjas de dos horas. Esta decisión del Poder Ejecutivo tiene un impacto directo en la rentabilidad de los estacioneros atado a la localización geográfica y al tamaño de la estación. Los costos asociados a esta metodología de pago tampoco son considerados por la paramétrica.
+
+%%%%%%%%%%%%%%%%%%%
+%%%% HIPÓTESIS %%%%
+%%%%%%%%%%%%%%%%%%%
+
+\section{Hipótesis}
+
+Los propietarios de las EESS han manifestado su descontento con la situación vigente de la paramétrica, lo cual, \textit{a priori}, no representaría una falla de mercado. Sin embargo, intuitivamente, la paramétrica y su posterior congelamiento abren las siguientes interrogantes: ¿qué regulación maximizaría el bienestar y procuraría la eficiencia en el mercado? ¿Se debe reformular la paramétrica para que esta se aproxime a la heterogeneidad en las estructuras de costos de las EESS (con franjas o grupos según características especiales)? ¿O se debe desregular el mercado para acercarlo a uno que funcione en competencia perfecta, con un régimen de subsidios para aquellas estaciones alejadas y con características peculiares (por ejemplo: estaciones fronterizas)? 
+
+Para responder estas preguntas, primero es menester resolver ciertas cuestiones relacionadas a la pertinencia de la regulación en este mercado. A su vez, se debe estudiar el impacto que la concentración de EESS tiene en algunas zonas del país (especialmente en el Área Metropolitana). También se deben estudiar las consecuencias que tienen las regulaciones que ANCAP efectúa en materia de costos y precios sobre los incentivos de las EESS. Por un lado, ANCAP fija el margen bruto de ganancia de las EESS regulando el precio intermedio (el costo por litro de combustible para las EESS), y simultáneamente, ANCAP fija el precio máximo al que las EESS pueden vender al público.
+
+Nuestra hipótesis es que la paramétrica actual, congelada y ajustada trimestralmente mediante el IPC y el IMS, no realiza una asignación eficiente de recursos, existiendo lugar para hacer una mejora en términos de eficiencia. A su vez, se debe fortalecer la capacidad de contralor del regulador.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% GANADORES Y PERDEDORES DE LA PARAMÉTRICA %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ganadores y perdedores de la paramétrica}
+
+En términos generales se puede afirmar que los ganadores son todas aquellas EESS que tienen costos menores a los que son fueron considerados en la construcción de la paramétrica. En particular este grupo incluye a las EESS con camión y a las grandes superficies. Según los datos provistos por CPA FERRERE (2016), si bien las EESS con camión deben hacer frente a los costos de mantenimiento del mismo y el sueldo del chofer, venden en promedio un 11\% más litros de combustible que las EESS sin camión, por lo que, en promedio, enfrentan costos medios menores. Por su parte, podría suponerse que las grandes superficies son más eficientes, mientras que, por motivos de escala, se encuentran en mejor posición a la hora de negociar con las distribuidoras, razones por las cuales enfrentarían menores costos.
+
+Adicionalmente, quienes no pagan alquiler estarían siendo beneficiados por la paramétrica actual dado que esta contempla un costo al cual no deben enfrentarse. Por último, aquellas EESS que cobran la mayor parte de sus ventas a través de medios electrónicos de pago incurren en un sobrecosto que no es contemplado por la paramétrica.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PROS & CONS DE LA LIBERALIZACIÓN %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Pros 'n cons de liberalizar el precio}
+
+Una de las opciones que se maneja en este trabajo es la liberalización del precio final. No obstante como puede apreciarse en el \textbf{Gráfico \ref{fig:descomp}} la bonificación solo representa un 12\% del precio final para la nafta, y un 9\% para el caso del gasoil. La mayor parte del precio final que pagan los consumidores está comprendida por los costos de ANCAP y los impuestos (84.42\% en el caso de la nafta, y 78.21\% en el caso del gasoil). Por lo tanto, es de esperar que la liberalización del precio final no genere, en el corto plazo, una baja sustancial en los precios finales de los combustibles.
+
+\begin{figure}[H]
+	\centering
+	\caption{composición del precio de un litro de Súper y Gasoil a abril de 2017}
+	\includegraphics[scale=0.9]{descomp.png}
+	\label{fig:descomp} \\
+	\vspace{0.2cm}
+	\noindent\textbf{Fuente:} elaboración propia en base a datos de la URSEA
+\end{figure}
+
+Por otra parte, la liberalización de los precios podría traer consigo problemas por monopolización de mercados. En este mercado cada EESS puede pensarse como un monopolio territorial. Si ante la liberalización de los precios las empresas menos eficientes cierran, las que logren permanecer en el mercado ampliarán su poder monopólico dado que existirán menos EESS en cada área. La escuela de Chicago entiende que esto solo sería un problema en el caso de barreras a la entrada, dado que, al aumentar los precios, debido a la monopolización del mercado, nuevos competidores ingresarán al mercado. De esta forma, la competencia potencial se transforma en diciplinante del mercado. Pero no es esperable que esto suceda. Una vez que los jugadores menos eficientes abandonen el mercado, otras empresas (no necesariamente de esta rama) ocuparán los predios en los que estos estaban, generándose entonces las barreras que prevendrían la re-entrada, cimentando así el poder monopólico de las firmas incumbentes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PROBLEMAS EN LA REGULACIÓN %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Problemas en la regulación}
+
+Las empresas públicas requieren de un regulador para inducir un comportamiento eficiente dado que tienen que atender a un cúmulo de objetivos económicos y políticos, muchos de ellos contrapuestos (Domingo, Zipitría, 2015). En particular, ANCAP como monopolio público enfrenta los siguiente problemas. En primer lugar, no tiene incentivos a ser eficientes en sentido productivo, por esto nos referimos a que no tiene incentivos a utilizar la mejor tecnología disponible, ni a usar la tecnología en todo su potencial\footnote{Una explicación más detallada de este fenómeno puede encontrarse en Domingo y Zipitría (2015).}. Adicionalmente, ANCAP está sujeto a múltiples principales: 
+\begin{enumerate*}[label={\alph*)},font={\color{red!50!black}\bfseries}]
+\item OPP,
+\item MEF,
+\item MIEM (Ministerio de Industria, Energía y Minería)
+\end{enumerate*}, los cuales le imponen múltiples objetivos. Mientras que el objetivo del MEF apunta hacia la estabilidad macroeconómica, el de la OPP apunta hacia las inversiones en tecnología de producción. En contraposición a esto, el MIEM tiene a su cargo el control directo de ANCAP. Por último, la gobernanza está sujeta al ciclo político. Esto se debe a que el directorio de ANCAP está vinculado políticamente al partido de gobierno y por tanto, sus decisiones estarán direccionadas por la política económica que el partido de gobierno busque impulsar.
+
+En el año 2002 se creó la URSEA, con el objetivo de que la población uruguaya acceda ``a todos los productos y servicios vinculados a la electricidad, combustible, gas y agua potable con la calidad, continuidad, seguridad y precio adecuado". La estructura directiva de la URSEA invita a dudar de su capacidad para regular. Esto se debe a que los directores de la URSEA son designados por el Poder Ejecutivo, con cargos de 6 años. Adicionalmente, el Presidente de la República tiene capacidad derogativa sobre sus fallos (Domingo, Ponce, Zipitría, 2016). Sumado a esto, ya en 2003, Bergara advertía respecto de la no independencia de esta unidad reguladora. En 2010 se elimina legalmente la potestad que tenía la URSEA de velar por ``la aplicación de tarifas que reflejen los costos económicos, en cuanto correspondiere", acotando sus competencias de contralor económico manteniéndole únicamente su capacidad de control de calidad y control técnico (Domingo, Ponce, Zipitría, 2016). 
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CONCLUSIONES Y RECOMENDACIONES DE POLÍTICA %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusiones y recomendaciones de política}
+
+Hasta el momento no es claro que haya una ganancia de eficiencia con la liberalización del precio final del combustible, en contraposición con una reformulación de la paramétrica. Independientemente de qué sistema sea el que se implemente, es menester fortalecer el rol del regulador para procurar el funcionamiento óptimo del mercado. En la misma línea con lo anterior, es necesario establecerle objetivos y metas claras a ANCAP.
+
+Una primera recomendación de política sería evitar la presencia de ANCAP en más de una etapa del proceso de producción y distribución, y comercialización de combustibles. Esto evitaría la coordinación entre empresas monopólicas de los distintos niveles: upstream, midstream, y downstream. Para ello debería fijarse únicamente un objetivo a la empresa, el refinamiento del petróleo.
+
+Adicionalmente, debería desfasarse la designación de los miembros del Directorio con el ciclo político. De hecho, sería aún más favorable lograr un mecanismo de selección de dichos directores que no estuviera ligada al PE. Estos problemas podrían solucionarse, en parte al menos, dotando a la empresa del carácter de ente autónomo. De esta forma las decisiones del directorio pasarían a estar sujetas a revisión del TCA, y no del MEF.
+
+Por último, entendemos sería de crasa importancia lograr mayor transparencia en la gestión de ANCAP haciendo públicos los datos referidos a la producción, así como los contratos entre ANCAP, las distribuidoras, y las EESS.
+
+\newpage
+
+%%%%%%%%%%%%%%%
+%%%% ANEXO %%%%
+%%%%%%%%%%%%%%%
+
+\section*{Anexo}
+\addcontentsline{toc}{section}{Anexo}
+
+\subsection*{Comparación de los precios de los combustibles}
+\addcontentsline{toc}{subsection}{Comparación de los precios de los combustibles}
+
+\begin{figure}[H]
+	\caption{Precio en dólares por litro del combustible para países de América}
+	\centering
+	\includegraphics[scale=0.8]{pum.png}
+	\label{fig:pum} \\
+	\vspace{0.2cm}
+	\noindent\textbf{Fuente}: Domingo, R.; Zipitría, L. (2015). Regulación de empresas públicas en Uruguay desafíos y perspectivas.
+\end{figure}
+
+\newpage
+
+\subsection*{Las EESS y el parque automotor en Uruguay}
+\addcontentsline{toc}{subsection}{Comparación de los precios de los combustibles}
+
+\begin{table}[h!]
+	\caption{EESS y parque automotor, por departamento}
+	\centering
+	\label{table:estacionespordepto}
+	\resizebox{17cm}{!} {
+	\begin{tabular}{| c | c | c | c | >{\centering\arraybackslash} m{3cm} | >{\centering\arraybackslash} m{3cm} |}
+	\hline
+	\hline
+	\textbf{Departamento} & \textbf{EESS} & \textbf{EESS (\%)} & \textbf{Vehículos} & \textbf{\% del parque automotor}& \textbf{Vehículos por EESS} \\
+	\hline
+	\hline
+	Artigas & 8 & 1.64\% & 488 & 1.39\% & 61.00 \\
+	\hline
+	Canelones & 67 & 13.73\% & 5173 & 14.76\% & 77.21 \\
+	\hline
+	Cerro Largo & 10 & 2.05\% & 1244 & 3.55\% & 124.40 \\
+	\hline
+	Colonia & 42 & 8.61\% & 1607 & 4.59\% & 38.26 \\
+	\hline
+	Durazno & 12 & 2.46\% & 819 & 2.34\% & 68.25 \\
+	\hline
+	Flores & 7 & 1.43\% & 308 & 0.88\% & 44.00 \\
+	\hline
+	Florida & 15 & 3.07\% & 666 & 1.90\% & 44.40 \\
+	\hline
+	Lavalleja & 12 & 2.46\% & 504 & 1.44\% & 42.00 \\
+	\hline
+	Maldonado & 28 & 5.74\% & 3535 & 10.09\% & 126.25 \\
+	\hline
+	Montevideo & 153 & 31.35\% & 12038 & 34.35\% & 78.68 \\
+	\hline
+	Paysandú & 22 & 4.51\% & 1234 & 3.52\% & 56.09 \\
+	\hline
+	Río Negro & 13 & 2.66\% & 567 & 1.62\% & 43.62 \\
+	\hline
+	Rivera & 8 & 1.64\% & 592 & 1.69\% & 74.00 \\
+	\hline
+	Rocha & 15 & 3.07\% & 774 & 2.21\% & 51.60 \\
+	\hline
+	Salto & 13 & 2.66\% & 1590 & 4.54\% & 122.31 \\
+	\hline
+	San José & 23 & 4.71\% & 1350 & 3.85\% & 58.70 \\
+	\hline
+	Soriano & 19 & 3.89\% & 968 & 2.76\% & 50.95 \\
+	\hline
+	Tacuarembó & 13 & 2.66\% & 1023 & 2.92\% & 78.69 \\
+	\hline
+	Treinta y Tres & 8 & 1.64\% & 568 & 1.62\% & 71.00 \\
+	\hline
+	\textbf{Total} & \textbf{488} & \textbf{100.00\%} & \textbf{35048} & \textbf{100.00\%} & \textbf{-} \\
+	\hline
+	\end{tabular}} \\
+	\vspace{0.3cm}
+	\noindent\textbf{Fuente:} Elaboración propia en base a datos del SUCIVE y la URSEA
+\end{table}
+
+\newpage
+
+\subsection*{Estimación de la paramétrica}
+\addcontentsline{toc}{subsection}{Estimación de la paramétrica}
+
+\noindent A continuación se presenta la estimación de la paramétrica que realizó CPA FERRERE (2016). La misma puede expresarse mediante la siguiente ecuación:
+$$B_1 = B_0 \; \left( \frac{V_{t_0} \; f(x)}{V_{t_1} \; C_{t_0}} \right)$$
+siendo
+$$f(x) = \frac{IPC_t}{IPC_0} \times 458 \, 616.2 + \frac{SP_t}{SP_0} \times 310 \, 736.8 + \frac{URA_t}{URA_0} \times  209 \, 952.4 + \frac{USD_t}{USD_0} \times 9 \, 531.3 + \frac{Pnafta_t}{Pnafta_0} \times 41 \, 484.3$$
+donde
+	\begin{itemize}
+	\item $B_1$: bonificación de gasolinas para el período de ajuste
+	\item $B_0$: bonificación de gasolinas para el período de referencia
+	\item $IPC_t$: IPC correspondiente a tres meses antes del ajuste
+	\item $IPC_0$: IPC correspondiente al mes inicial (octubre de 2013)
+	\item $SP_t$: salario mensual del pistero vigente al mes anterior
+	\item $SP_0$: salario mensual del pistero vigente a partir del 1/12/2013
+	\item $URA_t$: URA (unidad reajustable de alquiler) de cuatro meses antes del ajuste
+	\item $URA_0$: URA de setiembre 2013
+	\item $USD_t$: cotización del dólar interbancario promedio de dos meses antes del ajuste
+	\item $USD_0$: cotización del dólar interbancario promedio de noviembre de 2013
+	\item $Pnafta_t$: precios gasolina súper 95 del mes anterior al ajuste 
+	\item $Pnafta_0$: precios gasolina súper 95 vigente a noviembre 2013
+	\item $VT_1$: volúmenes vendidos por la estación promedio, en base a los retiros de combustible del año móvil cerrado dos meses antes del ajuste dividido las EESS activas en el semestre móvil cerrado dos meses antes del ajuste
+	\item $VT_0$: volúmenes vendidos por la estación promedio, en base a los retiros de combustible del año móvil cerrado a noviembre de 2013 dividido las EESS activas en el semestre móvil cerrado a noviembre de 2013
+	\item $CT_0$: costos totales de EESS ``tipo" a valores de enero de 2014
+	\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%% BIBLIOGRAFÍA %%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Bibliografía}
+\addcontentsline{toc}{section}{Bibliografía}
+
+\begin{itemize}
+\item ANCAP (2016) - Presentación de estados financieros individuales
+\item Balance Ducsa 2015
+\item Bergara y Pereyra (2005) - El proceso de diseño e implementación de políticas y las reformas en los servicios públicos
+\item Convenio colectivo grupo 19 subgrupo 10 2006
+\item CPA Ferrere (2016) - Evaluación de la paramétrica de estaciones de servicio
+\item CPA Ferrere (2017) - El precio de los combustibles en Uruguay
+\item Decreto (resolución)  3966-2016 - IMESI estaciones fronterizas
+\item Decreto 398-007 (con actualizaciones 110-014) - IMESI combustible fronteras
+\item Domingo y Zipitría (2014) - Marco regulatorio y empresas públicas en Uruguay
+\item Domingo y Zipitría (2015) - Regulación de empresas públicas en Uruguay. Desafíos y perspectivas
+\item Domingo, Ponce y Zipitría (2016) - Regulación económica para economías en desarrollo
+\item DUCSA (2013) - Memorias
+\item DUCSA (2014) - Memorias
+\item DUCSA (2015) - Memorias
+\item Laudo 2006 Grupo 19 subgrupo 10
+\item Laudo 2015 Grupo 19 subgrupo 10
+\item Ley Nº 15312
+\item MIEM - Pliego tarifario (diciembre 2016)
+\item MIEM - Pliego tarifario (enero 2014)
+\item Presentación Balance ANCAP - Ejercicio 2016
+\item URSEA (2008) - Memoria anual
+\item URSEA (2010) - Metedología para la determinación de los precios de paridad de importación de productos derivados del petróleo
+\item URSEA (2012) - Regulación de energía y agua
+\item URSEA (2014) - Medición de la satisfacción de usuarios de energía eléctrica, agua, supergas, y combustibles.
+\item URSEA (2015) - Memoria anual
+\item URSEA (2017) - Informe sobre precios de paridad de importación de productos derivados del petróleo correspondiente al mes de abril 2017
+\item URSEA (2017) - Texto compilado de normativas
+\item Zipitría - Opacidad y regulador débil incentivaron desvíos en ANCAP
+\item Agencia Nacional Petroleo - Precios combustible Brasil [web] %http://www.anp.gov.br/preco/prc/Resumo_Por_Estado_Municipio.asp
+\end{itemize}
+
+\end{document}

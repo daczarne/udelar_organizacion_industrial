@@ -1,0 +1,113 @@
+﻿\section{Un primer modelo}
+
+\begin{frame}[allowframebreaks]{Un primer modelo}
+
+Supuestos generales:
+\begin{itemize}
+\item Modelo de corto plazo
+\item No existen costos fijos 
+\item No hay entrada ni salida de empresas en ninguno de los niveles
+\item Las EESS no cambian de distribuidora a lo largo del período
+\item Por lo tanto, no cambia el market share de las distribuidoras
+\item El juego es estático con información completa y perfecta
+\item Dado que se trata de un modelo de Producer-Retailer, las funciones de producción de las firmas intermediarias y las de las firmas downstream son funciones Leontieff
+\end{itemize}
+
+\framebreak
+
+Supuestos sobre ANCAP (firma upstream):
+\begin{itemize}
+\item Productor monopólico
+\item Costo marginal $c^U$
+\item Precio de venta $P^U$
+\end{itemize}
+
+Supuestos sobre distribuidoras (firmas intermedias):
+\begin{itemize}
+\item Compiten ex-ante por el mercado por lo que cada una es monopólica en su propio mercado
+\item Costo marginal $P^U + c^I$
+\item Precio de venta $P^I$
+\end{itemize}
+
+Supuestos sobre las EESS (firmas downstream):
+\begin{itemize}
+\item Existen $N$ estaciones de servicios
+\item Compiten Cournot simultáneo
+\item Todas las EESS son iguales, por lo que: costo marginal $P^I + c^D$
+\item Precio de venta $P^D$
+\item Enfrentan una demanda inversa $P^D=A-B \times \sum_D q^D_i$
+\end{itemize}
+
+\framebreak 
+
+Función objetivo de las EESS:
+$$\Pi_i^D = \left(A - B \times \sum_D q_i^D\right) \times q_i^D - \left(P^I + c^D \right) \times q_i^D$$
+
+CPO:
+$$\frac{\partial \Pi_i^D}{\partial q_i^D} = 0 \Rightarrow R_i(q_{-i}^D): q_i^D = \frac{A - B \times \sum_D q_{-i}^D - (P^I + c^D)}{2B} \Rightarrow$$
+$$\Rightarrow q_i^D(P^I) = \frac{1}{N+1} \left( \frac{A - (P^I + c^D)}{B} \right)$$
+
+De donde podemos despejar la demanda de todas las EESS:
+$$Q^D(P^I) = \sum_D q_i^D(P^I) = N \times q^D(P^I) \Rightarrow Q^D(P^I) = \frac{N}{N+1} \left(\frac{A - (P^I + c^D)}{B}\right)$$
+
+De donde se desprende que:
+$$Q^I(P^I) = \frac{N}{N+1} \left( \frac{A - (P^I + c^D)}{B} \right)$$
+
+Sea $\theta_j$ el porcentaje de EESS que sirve cada distribuidora tal que $\sum_J \theta_j = 1$, entonces la demanda derivada que enfrenta cada distribuidora está dada por:
+$$q_j^I(P^I) = \theta_j \left( \frac{N}{N+1} \right) \left( \frac{A - (P^I + c^D)}{B} \right)$$
+
+Despejando $P^I$ obtenemos la demanda derivada inversa:
+$$P^I(q_j^I) = A - c^D - \frac{N+1}{N} \times \frac{B}{\theta_j} \times q_j^I$$
+
+El programa de optimización de las distribuidoras implica que:
+$$MR_j^I=MC_j^I$$
+$$A - c^D - \frac{N+1}{N} \times \frac{2B}{\theta_j} \times q_j^I = P^U + c^I \Rightarrow$$
+$$\Rightarrow q_j^I(P^U) = \theta_j \left( \frac{N}{N+1} \right) \left( \frac{A - (c^D + c^I + P^U)}{2B} \right)$$
+
+De donde podemos obtener la demanda derivada que enfrenta el productor (ANCAP): 
+$$Q^U(P^U) = \sum_J q_j^I(P^U) = \sum_J \theta_j \left( \frac{N}{N+1} \right) \left( \frac{A - (c^D + c^I + P^U)}{2B} \right) = $$
+$$= \left( \frac{N}{N+1} \right) \left( \frac{A - (c^D + c^I + P^U)}{2B} \right) \times \underbrace{\sum_J \theta_j}_{\text{=1}} \Rightarrow$$
+$$\Rightarrow Q^U(P^U) = \left( \frac{N}{N+1} \right) \left( \frac{A - (c^D + c^I + P^U)}{2B} \right)$$
+
+Entonces, la demanda derivda inversa que enfrenta el productor está dada por:
+$$P^U(Q^U) = A-(c^D+c^I) - \frac{N+1}{N} \times 2B \times Q^U$$
+
+El programa de optimización del productor implica que:
+$$MR^U=MC^U$$
+$$A - (c^D + c^I) - \frac{N+1}{N} \times 4B \times Q^U = c^U$$
+
+Despejando $Q^U$ obtenemos que:
+$$Q^{U^*} = \left( \frac{N}{N+1} \right) \left(\frac{(A - c^D - c^I) - c^U}{4B}\right)$$
+
+Reemplazando en la demanda derivada inversa que enfrenta el productor obtenemos que:
+$$P^{U^*} = \frac{(A - c^D - c^I) + c^U}{2}$$
+
+Remplazando $P^{U^*}$ en $Q^I(P^U)$ y en $q_j^I(P^U)$ obtenemos que:
+$$Q^{I^*} = \left( \frac{N}{N+1} \right) \left( \frac{(A - c^D ) - (c^I + c^U)}{4B} \right)$$
+$$q_j^{I^*} =\theta_j \times \left( \frac{N}{N+1} \right) \left( \frac{(A - c^D) - (c^I + c^U)}{4B} \right)$$
+
+Reemplazando en $P^I(q_j^I)$, obtenemos:
+$$P^{I^*} = \frac{3(A-c^D)+(c^I+c^U)}{4}$$
+
+\framebreak
+
+Remplazando $P^{I^*}$ en $Q^D(P^I)$ y en $q_i^D(P^I)$ obtenemos que:
+$$Q^{D^*} = \frac{N}{N+1} \left( \frac{A - (c^D + c^I + c^U)}{4B} \right)$$
+$$q_i^{D^*} = \frac{1}{N+1} \left( \frac{A - (c^D + c^I + c^U)}{4B} \right)$$
+
+Finalmente, remplazando en la demanda de mercado obtenemos:
+$$P^{D^*} = \frac{A (3N+4) + N (c^D + c^I + c^U)}{4(N+1)}$$
+Esto nos muestra cual sería el precio final de los combustibles, si ANCAP no lo fija de forma administrativa.
+
+\framebreak
+
+$$\lim \limits_{N \rightarrow +\infty} \frac{A (3N+4) + N (c^D + c^I + c^U)}{4(N+1)} = \frac{3A + (c^D + c^I + c^U)}{4} = P^I + c^D = MC^D $$
+
+\framebreak
+
+Podemos entonces calcular los beneficios de cada uno de los agentes:
+$$\Pi^{U^*} = \frac{N}{N+1} \left[ \frac{(A - c^D - c^I - c^U))^2}{8B} \right]$$
+$$\Pi_j^{I^*} = \theta_j \frac{N}{N+1} \left[ \frac{(A - c^D - c^I - c^U)^2}{16B} \right]$$
+$$\Pi_i^{D^*} = \frac{1}{B} \left[ \frac{A - c^D - c^I - c^U}{4(N+1)} \right]^2$$
+
+\end{frame}

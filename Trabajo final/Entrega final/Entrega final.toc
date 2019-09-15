@@ -1,0 +1,18 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\'on}{1}{section.1}
+\contentsline {section}{\numberline {2}Descripci\'on del mercado}{1}{section.2}
+\contentsline {subsection}{\numberline {2.1}La oferta}{1}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}La demanda}{2}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Din\'amica del mercado de combustibles l\IeC {\'\i }quidos}{3}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Regulaci\'on del mercado}{3}{subsection.2.4}
+\contentsline {section}{\numberline {3}La param\'etrica}{4}{section.3}
+\contentsline {section}{\numberline {4}Hip\'otesis}{6}{section.4}
+\contentsline {section}{\numberline {5}Ganadores y perdedores de la param\'etrica}{6}{section.5}
+\contentsline {section}{\numberline {6}Pros 'n cons de liberalizar el precio}{7}{section.6}
+\contentsline {section}{\numberline {7}Problemas en la regulaci\'on}{8}{section.7}
+\contentsline {section}{\numberline {8}Conclusiones y recomendaciones de pol\IeC {\'\i }tica}{9}{section.8}
+\contentsline {section}{Anexo}{10}{section.8}
+\contentsline {subsection}{Comparaci\'on de los precios de los combustibles}{10}{section*.4}
+\contentsline {subsection}{Las EESS y el parque automotor en Uruguay}{11}{figure.caption.5}
+\contentsline {subsection}{Estimaci\'on de la param\'etrica}{12}{table.caption.6}
+\contentsline {section}{Bibliograf\IeC {\'\i }a}{13}{table.caption.6}
