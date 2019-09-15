@@ -1,0 +1,540 @@
+\documentclass[spanish,A4,12pt]{article}
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{tasks}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{forest}
+\usepackage[ansinew]{inputenc}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage[spanish,es-lcroman]{babel}
+%\usepackage[dvips]{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{delarray}
+\usepackage{dcolumn}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{psfrag}
+\usepackage{multirow,hhline}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{wasysym}
+\usepackage{booktabs}
+\usepackage{lscape}
+\usepackage{url}
+\usepackage{nicefrac}
+\usepackage{setspace}
+\usepackage[pdftex=true,bookmarks=true,bookmarksopen=false]{hyperref}
+%\usepackage[]{natbib}
+%\usepackage{flexbib}
+\usepackage {hyperref}
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=blue
+  }
+
+\usepackage[sf,sl,outermarks]{titlesec}
+\setlength{\parindent}{0.5in}
+\setlength{\parskip}{1em}
+
+\titleformat{\section}
+{\normalfont\Large\scshape\bfseries} {\thesection.}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\large\scshape\bfseries} {\thesubsection.}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalfont\scshape\bfseries} {\thesubsubsection.}{1em}{}
+
+\hypersetup{pdfborder = {0 0 0 0}}%Para eliminar los cuadros de los links
+
+\newcommand{\m}[1]{\mathbf{ #1 }}
+\newcommand{\p}{\partial}
+\newcommand{\pr}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\prv}[2]{{\partial #1}/{\partial #2}}
+
+\definecolor{respuesta}{rgb}{0.00,0.00,0.00}
+\newcommand{\re}[1]{\smallskip \textsc{Respuesta} \begin{sf}\\{ \textcolor{respuesta}{#1
+}} \end{sf}}
+
+\usepackage[left=2.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+\hyphenpenalty=15000 \pretolerance=2000 \tolerance=3000
+%\linespread{1.5}
+
+\setcounter{section}{0}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[section]
+\newtheorem{example}{Ejemplo}[section]
+\newtheorem{observation}{Observación}[section]
+\newtheorem{exercise}{Ejercicio}
+\newtheorem{problem}{Problema}
+\newtheorem{adexercise}{Ejercicio Adicional}
+
+\tikzset{
+	every picture/.append style={
+		execute at begin picture={\deactivatequoting},
+		execute at end picture={\activatequoting}
+	}
+}
+\tikzset{>=latex}
+
+\everymath{\displaystyle}
+\renewcommand{\arraystretch}{1.5}
+
+% Crea el símbolo matemático de diferencial
+\DeclareMathOperator*{\di}{\mathrm{d}\!}
+\def\at{
+  \left.
+  \vphantom{\int}
+  \right|
+}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\lhead{EJERCICIOS DOMICILIARIOS} 
+\rhead{Daniel Czarnievicz}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% SOLUCIÓN EJERCICIO 1 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}
+\textit{Solución} \\
+
+\begin{enumerate}
+\item Localización del consumidor marginal:
+$$u_i^A(x^*)=u_i^B(x^*) \Rightarrow 10-p_A-tx^*=8-p_B-t(2-x^*) \Rightarrow 2-p_A+p_B+2t=2tx^* \Rightarrow $$
+$$\Rightarrow x^*(p_A;p_B) = \frac{2+2t+p_B-p_A}{2t}$$ 
+
+Por lo tanto:
+\textcolor{blue}{$$\boxed{x^*(p_A;p_B) = 1 + \frac{2+p_B-p_A}{2t}}$$}
+
+\item Función de demanda por la firma A:
+$$q_A(p_A;p_B) = \int_0^{x^*(p_A;p_B)}\! N f_X(x) \di x = N \int_0^{x^*(p_A;p_B)}\! f_X(x) \di x = N \left(F_X(x)\Big|_0^{x^*(p_A;p_B)}\right) = $$
+$$= N \left( \frac{x^*(p_A;p_B)}{2} - \frac{0}{2} \right) = \left(\frac{N}{2}\right) x^*(p_A;p_B) = \frac{N}{2} \left(1 + \frac{2+p_B-p_A}{2t}\right)$$
+
+Por lo tanto:
+\textcolor{blue}{$$\boxed{q_A(p_A;p_B) = \frac{N}{2} \left(1 + \frac{2+p_B-p_A}{2t}\right)}$$}
+
+\item Función de demanda por la firma B:
+$$q_B(p_A;p_B) = \int_{x^*(p_A;p_B)}^2\! N f_X(x) \di x = N \int_{x^*(p_A;p_B)}^2\! f_X(x) \di x = N \left(F_X(x)\Big|_{x^*(p_A;p_B)}^2\right) = $$
+$$= N \left(\frac{2}{2} - \frac{x^*(p_A;p_B)}{2}\right) = \left(\frac{N}{2}\right) \Big[ 2 - x^*(p_A;p_B) \Big] = \left(\frac{N}{2}\right) \left[2 - \left(1 + \frac{2+p_B-p_A}{2t}\right)\right] = $$
+$$= \left(\frac{N}{2}\right) \left(1 - \frac{2+p_B-p_A}{2t}\right) $$
+
+Por lo tanto:
+\textcolor{blue}{$$\boxed{q_B(p_A;p_B) = \frac{N}{2} \left(1 - \frac{2+p_B-p_A}{2t}\right)}$$}
+
+\item Funciones de beneficios de las firmas:
+	\begin{enumerate}
+	\item Firma A: 
+	\textcolor{blue}{$\boxed{\Pi_A = \frac{N}{2} \Big(p_A - c_A \Big) \left(1 + \frac{2+p_B-p_A}{2t}\right)}$}
+	\item Firma B: 
+	\textcolor{blue}{$\boxed{\Pi_B = \frac{N}{2} \Big(p_B - c_B \Big) \left(1 - \frac{2+p_B-p_A}{2t}\right)}$}
+	\end{enumerate}
+
+\newpage
+
+\item Equilibrio de Nash en la competencia vía precios:
+	\begin{itemize}
+	\item CPO de la firma A:
+	$$\frac{\partial \Pi_A}{\partial p_A} = \Big(1+ \frac{2+p_B-p_A}{2t} \Big) + \Big(p_A - c_A \Big) \Big(-\frac{1}{2t}\Big) = 0 \Rightarrow 2t + 2 + p_B - p_A - p_A + c_A = 0$$
+	
+	Por lo tanto: 
+	\textcolor{blue}{$$\boxed{R_A(p_B): p_A = \frac{2t + 2 + p_B+ c_A}{2}}$$}
+	
+	\item CPO de la firma B:
+	$$\frac{\partial \Pi_B}{\partial p_B} = \Big(1 - \frac{2 + p_B - p_A}{2t} \Big) + \Big(p_B - c_B \Big) \Big(-\frac{1}{2t}\Big) = 0 \Rightarrow 2t - 2 - p_B + p_A - p_B + c_B = 0$$
+	
+	Por lo tanto: 
+	\textcolor{blue}{$$\boxed{R_B(p_A): p_B = \frac{2t - 2 + p_A + c_B}{2}}$$}
+	
+	\item Resolviendo $R_A(p_B) \cap R_B(p_A)$ obtenemos que:
+	$$p_A^* = \frac{2t + 2 + c_A}{2} + \frac{1}{2} \Big( \frac{2t - 2 + p_A^* + c_B}{2} \Big) = \frac{3t}{2} + \frac{1}{2} + \frac{c_A}{2} + \frac{p_A^*}{4} + \frac{c_B}{4} \Rightarrow$$
+	$$\Rightarrow p_A^* - \frac{p_A^*}{4} = \frac{3t}{2} + \frac{1}{2} + \frac{c_A}{2} + \frac{c_B}{4} \Rightarrow \Big(\frac{3}{4} \Big) p_A^* = \frac{6t + 2 + 2c_A + c_B}{4} \Rightarrow$$
+	$$\Rightarrow p_A^* = \frac{4}{3} \Big( \frac{6t + 2 + 2c_A + c_B}{4} \Big)$$
+
+	De donde obtenemos que:
+\textcolor{blue}{$$\boxed{p_A^* = \frac{6t + 2 + 2c_A + c_B}{3}}$$}
+	
+	Remplazando en $p_B$ obtenemos:
+	$$p_B^* = \frac{2t - 2 + c_B}{2} + \frac{p_A^*}{2} = \frac{2t - 2 + c_B}{2} + \frac{1}{2} \Big( \frac{6t + 2 + 2c_A + c_B}{3} \Big) = $$
+	$$= \frac{2t - 2 + c_B}{2} + \frac{6t + 2 + 2c_A + c_B}{6} = \frac{6t - 6 + 3c_B + 6t + 2 + 2c_A + c_B}{6} $$
+	
+	De donde obtenemos que:
+	\textcolor{blue}{$$\boxed{p_B^* = \frac{6t - 2 + c_A + 2c_B}{3}}$$}
+	
+	\newpage
+	
+	\item Remplazando $p_A^*$ y $p_B^*$ en $q_A(p_A;p_B)$ y $q_B(p_A;p_B)$, obtenemos:
+	$$q_A^*(p_A^*;p_B^*) = \frac{N}{2} \Big( 1 + \frac{2}{2t} + \frac{6t + 2 + 2c_A + c_B}{6t} - \frac{6t - 2 + c_A + 2c_B}{6t} \Big) = $$
+	$$= \frac{N}{2} \Big( 1 + \frac{2}{2t} + \frac{-4 - c_A + c_B}{6t}\Big) = \frac{N}{2} \Big( \frac{6t + 2 - c_A + c_B}{6t}\Big) \Rightarrow$$
+	$$\Rightarrow \color{blue}\boxed{q_A^*(p_A^*;p_B^*) = \frac{N}{2} \Big( \frac{6t + 2 - c_A + c_B}{6t}\Big)}$$
+	$$q_B^*(p_A^*;p_B^*) = \frac{N}{2} \Big( 1 - \frac{2}{2t} + \frac{6t + 2 + 2c_A + c_B}{6t} - \frac{6t - 2 + c_A + 2c_B}{6t} \Big) = $$
+	$$= \frac{N}{2} \Big( 1 - \frac{2}{2t} + \frac{4 + c_A - c_B}{6t}\Big) = \frac{N}{2} \Big( \frac{6t - 2 + c_A - c_B}{6t}\Big) \Rightarrow$$
+	$$\Rightarrow \color{blue}\boxed{q_B^*(p_A^*;p_B^*) = \frac{N}{2} \Big( \frac{6t - 2 + c_A - c_B}{6t}\Big)}$$
+	
+	\item Luego, utilizando los datos del problema ($c_A=3$, $c_B=1$, y $t=1$), obtenemos que:
+	
+	\begin{center}
+		\begin{tabular}{c | c | c | c}
+		& $p_j^*$ & $q_j^*$ & $\Pi_j^*$ \\
+		\hline
+		Firma A & $5$ & $1000$ & $2000$ \\
+		\hline
+		Firma B & $3$ & $1000$ & $2000$ \\
+		\end{tabular}
+	\end{center}
+	
+	\end{itemize}
+\item Matriz de elasticidades
+$$
+\begin{bmatrix}
+\frac{\partial q_A(p_A;p_B)}{\partial p_A} \cdot \frac{p_A^*}{q_A^*} & \frac{\partial q_A(p_A;p_B)}{\partial p_B} \cdot \frac{p_B^*}{q_A^*} \\[1.5em]
+\frac{\partial q_B(p_A;p_B)}{\partial p_A} \cdot \frac{p_A^*}{q_B^*} & \frac{\partial q_B(p_A;p_B)}{\partial p_B} \cdot \frac{p_B^*}{q_B^*}
+\end{bmatrix}
+=
+\begin{bmatrix}
+-\frac{5}{2} & \frac{3}{2} \\[1.5em]
+\frac{5}{2} & -\frac{3}{2}
+\end{bmatrix}
+=
+\begin{bmatrix}
+-2.5 & 1.5 \\[1.5em]
+2.5 & -1.5
+\end{bmatrix}
+$$
+
+Por lo tanto:
+	\begin{itemize}
+	\item $-\infty < \varepsilon^A_{p_A} < -1 \Rightarrow$ la firma A se encuentra en el tramo elástico de la demanda.
+	\item $-\infty < \varepsilon^B_{p_B} < -1 \Rightarrow$ la firma B se encuentra en el tramo elástico de la demanda.
+	\item $\varepsilon^A_{p_A} < \varepsilon^B_{p_B} \Rightarrow$ el bien A es más elástico que el bien B en el equilibrio.
+	\item $\varepsilon^i_{p_j} > 0 \Rightarrow$ los bienes son sustitutos.
+	\end{itemize}
+\end{enumerate}
+\end{exercise}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% SOLUCIÓN EJERCICIO 2 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}
+\textit{Solución} \\
+
+\begin{enumerate}
+\item Comenzamos obteniendo la demanda derivada inversa de motores (upstream) a partir de la condición de maximización en el mercado de botes (downstream). Dado que el mercado de botes opera en competencia perfecta:
+$$MR^B = MC^B \Rightarrow P_B(q_B) = c_B \Rightarrow 1300 - q_B = P_M + 300 \Rightarrow P_M = 1000 - q_B \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{P_M(Q_M) = 1000 - Q_M}$$
+
+Luego resolvemos el problema de maximización del monopolista productor de motores:
+$$MR^M = MC^M \Rightarrow 1000 - 2Q_M = 200 \Rightarrow \color{blue}\boxed{Q_M^* = 400} \color{black}\Rightarrow \color{blue}\boxed{P_M^* = 600}$$
+
+Beneficios del monopolista productor de motores:
+$$\Pi^M = \Big( P_M^* - c_M \Big) Q_M^* = 400 \times 400 = 160\,000$$
+
+\item Volviendo al mercado downstream obtenemos:
+$$MR^B = MC^B \Rightarrow P_B(q_B) = c_B \Rightarrow 1300 - q_B = P_M^* + 300 \Rightarrow 1300 - q_B = 900 \Rightarrow$$ 
+$$\Rightarrow \color{blue}\boxed{q_B^* = 400} \color{black}\Rightarrow \color{blue}\boxed{P_B^* = 900}$$
+
+Beneficios del productor de botes:
+$$\Pi^B = \Big( P_B^* - c_M \Big) q_B^* = 0 \times 400 = 0$$
+
+\item Problema del monopolio generado por la fusión:
+$$\Pi = q(1300-q)-500q$$
+$$\frac{\partial \Pi}{\partial q} = 1300 - 2q - 500 = 0 \Rightarrow 800 = 2q \Rightarrow \color{blue}\boxed{q^* = 400} \color{black}\Rightarrow \color{blue}\boxed{P^*=900} \color{black}\Rightarrow \color{blue}\boxed{\Pi = 160\,000}$$
+
+\item La afirmación no es correcta. Las conclusiones alcanzadas dependen de que la función de producción de la empresa downstream sea de tipo Leontieff (proporciones fijas), tal como es en este caso (1 bote $\rightarrow$ 1 motor).
+
+\item Llamemos $(1 - \alpha)$ a la tasa de impuesto cobrado. El problema del productor de botes es entonces:
+$$\alpha \Pi^B = \alpha \Big(P_B - c_B \Big) q_B$$
+$$\frac{\partial \Pi^B}{\partial q_B} = \alpha \Big( P_B - c_B \Big) = 0 \Rightarrow \boxed{P_B = c_B}$$
+
+La condición de maximización de beneficios no cambia en presencia del impuesto. Por lo tanto, la demanda derivada inversa que enfrenta el productor de motores no cambia:
+$$P_M = 1000 - Q_M$$
+
+El problema que enfrenta el productor de motores es entonces:
+$$\alpha \Pi^M = \alpha \Big( P_M - c_M \Big) Q_M = \alpha \Big( 1000 - Q_M - 200 \Big) Q_M = \alpha \Big( 800 - Q_M \Big) Q_M$$
+$$\frac{\partial \Pi^M}{\partial Q_M} = \alpha \Big( 800 - 2Q_M \Big) = 0 \Rightarrow \color{blue}\boxed{Q_M^* = 400} \color{black}\Rightarrow \color{blue}\boxed{P_M^* = 600} \color{black}\Rightarrow \color{blue}\boxed{\Pi_M^* = 160\,000 \, \alpha}$$
+
+En el mercado downstream: $\color{blue}\boxed{q_B^* = 400} \color{black}\Rightarrow \color{blue}\boxed{P_B^* = 900} \color{black}\Rightarrow \color{blue}\boxed{\Pi_B^* = 0}$ \\
+
+Por lo tanto, luego de introducido el impuesto, las firmas solo logran retener una proporción $\alpha$ de sus beneficios, pero esto no altera los incentivos a fusionarse.
+\end{enumerate}
+\end{exercise}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% SOLUCIÓN EJERCICIO 3 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}
+\textit{Solución} \\
+
+\begin{enumerate}
+\item En una política de Second Best Pricing, el gobierno buscará que $P=AC_2$, por lo tanto:
+$$\frac{60}{x} + 22 = \frac{100}{x} + 20 \Rightarrow 2 = \frac{40}{x} \Rightarrow \color{blue}\boxed{x^*=20} \color{black}\Rightarrow \color{blue}\boxed{P^*=25}$$
+
+Este tipo de políticas presentan los siguientes problemas:
+	\begin{itemize}
+	\item Si $P=AC \Rightarrow P > MC$, por lo que se incurre en una Pérdida de Excedente del Consumidor, en relación a lo que se conseguiría si $P = MC$.
+	\item El gobierno se enfrentará a un problema de acceso de información. La firma F2 tiene incentivos a reportar costos mayores que los que verdaderamente enfrenta para buscar así elevar el precio y obtener rentas. El problema aquí es que el regulador siempre contará con menos información respecto de un área de negocios que las firmas incumbentes.
+	\item Por último, existe una restricción de acceso. Si bien esto siempre ocurre, en este caso la restricción es más ``grave'' dado que están quedando por fuera del mercado personas que están dispuestas a pagar un precios mayor al costo marginal (pero no tan alto como el costo medio). Esta puede traducirse en que el marginal es desplazado y se reduce la cantidad de inframarginales.
+	\end{itemize}
+
+\item La franquicia la ganará F1 dado que es la que tiene menor costo medio, pero se fijará un precio igual al costo medio de a firma dos, por lo tanto:  
+$$\frac{60}{x} + 22 = \frac{100}{x} + 20 \Rightarrow 2 = \frac{40}{x} \Rightarrow \color{blue}\boxed{x^*=20} \color{black}\Rightarrow \color{blue}\boxed{P^*=25}$$
+
+Los beneficios de la firma F1 serán:
+$$\Pi_1 = P^* \cdot x^* - C_1(x^*) = (20)(25) - \Big( 80 + 20(20) \Big) \Rightarrow \color{blue}\boxed{\Pi_1 = 20}$$
+
+\begin{center}
+\includegraphics[scale=.65]{imagen1}
+\end{center}
+
+Leyenda:
+	\begin{description}
+	\item $\color{DarkGreen} \blacksquare$ Curvas de costos medios de las firmas.
+	\item $\color{red} \blacksquare$ Demanda inversa del mercado.
+	\item $\color{orange} \blacksquare$ Costo marginal de las firmas.
+	\item $\color{violet} \blacksquare$ Renta de la firma F1.
+	\end{description}
+
+\item Subastar implica cambiar la competencia \textit{ex post} \textbf{en} el mercado, por competencia \textit{ex ante} textbf{por} el mercado. Esto libera al regulador de tener que conocer la estructura de costos de la firma incumbente a fin de poder fijar el precio. No obstante, la estrategia solo es óptima si no existe la posibilidad de que los agentes coludan antes de la subasta para así repartirse el mercado. Estos riesgos se mitigan más fácilmenten cuando existen muchos competidores en la subasta y la capacidad de coordinación entre ellos se vuelve reducida.
+\end{enumerate}
+\end{exercise}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% SOLUCIÓN EJERCICIO 4 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}
+\textit{Solución} \\
+\begin{enumerate}
+\item Discriminación de primer grado:
+\begin{center}
+	\begin{tabular}{c c}
+	Pedro: & 23 \\
+	María: & 25 \\
+	Juan: & 23 \\
+	José: & 21 \\
+	\hline
+	\textbf{Total:} & \textbf{92}
+	\end{tabular}
+\end{center}
+
+\item El monopolista enfrenta las siguientes posibilidades a la hora de fijar precio único por cada producto:
+\begin{center}
+	\begin{tabular}{c c}
+		\begin{tabular}{c c}
+		\textbf{Bebida:} 	& $15 \times 4 = 60$ \\
+							& $18 \times 2 = 36$ \\
+							& $20 \times 1 = 20$ \\
+		\end{tabular}
+		&
+		\begin{tabular}{c c}
+		\textbf{Pop:}	 	& $5 \times 4 = 20$ \\
+							& $6 \times 2 = 12$ \\
+							& $8 \times 1 = 8$ \\
+		\end{tabular}
+	\end{tabular}
+\end{center}
+
+Por lo tanto, el monopolista maximizador fijará el precio de la bebida en \$15 y venderá cuatro unidades, y el precio del pop en \$5 y venderá cuatro unidades. Obtendrá entonces $\Pi = 80$.
+
+\item $\Pi = 18 \times 2 + 15 \times 2 + 5 \times 4 = 36 + 30 + 20 = 86$
+
+\item Disposición a pagar de cada persona por el paquete pop+bebida:
+\begin{center}
+	\begin{tabular}{c c}
+	Pedro: & 23 \\
+	María: & 25 \\
+	Juan: & 23 \\
+	José: & 21 \\
+	\end{tabular}
+\end{center}
+
+Problema del monopolio:
+\begin{center}
+	\begin{tabular}{| >{\centering\arraybackslash} m{2cm} | >{\centering\arraybackslash} m{2cm} | >{\centering\arraybackslash} m{3cm} |}
+	\hline
+	\hline
+	\textbf{Precio fijado} & \textbf{Cantidad vendida} & \textbf{Beneficio del monopolista} \\
+	\hline
+	\hline
+	25 & 1 & 25 \\
+	\hline
+	23 & 3 & 69 \\
+	\hline
+	21 & 4 & 84 \\
+	\hline
+	\end{tabular}
+\end{center}
+
+Para maximizar los beneficios el monopolista elegirá un precio de \$21 por la canasta pop+bebida. Venderá entonces 4 unidades, y obtendrá un beneficio de \$84.
+
+\item La afirmación claramente no es cierta ya que el ejercicio es un contraejemplo de lo que se afirma. En esta caso: 
+$$\Pi_{\text{monopolista ordinario}} < \Pi_{\text{tie-in sale}} < \Pi_{\text{discriminación de 3er grado}}$$
+
+El beneficio que obtendría la firma producto de realizar una estrategia de tipo tie-in sale surge de que la preferencias de los consumidores por el pop y la bebida estén inversamente correlacionadas. Así la firma puede aumentar el margen entre el precio y el costo marginal. Por otro lado, el beneficio que obtendría la firma por practicar discriminación de tercer grado derivaría de cobrar según la elasticidad de cada grupo por la demanda del mismo bien. En el caso del ejercicio, la firma obtendría mayores beneficios por la discriminación de tercer grado ya que el precio que obtendría producto de la preferencias inversamente correlacionadas es menor que aquel que obtendría producto de la diferencia entre las elasticidades de los grupos: jóvenes y adultos.
+\end{enumerate}
+\end{exercise}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% SOLUCIÓN EJERCICIO 5 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}
+\textit{Solución} \\
+\begin{enumerate}
+\item Equilibrio de Nash en el mercado downstream. \\
+
+Función de mejor respuesta de la firma D1:
+$$\Pi^D_1 = \Big( p_1 - c_1 \Big) q_1 = \Big( p_1 - w_i - 15 \Big) \Big( 100 - p_1 + \frac{p_2}{2} \Big)$$
+$$\frac{\partial \Pi^D_1}{\partial p_1} = \Big( 100 - p_1 + \frac{p_2}{2} \Big) + \Big( p_1 - w_i - 15 \Big) (-1) = 0 \Rightarrow$$
+$$\Rightarrow 100 - p_1 + \frac{p_2}{2} - p_1 + w_i + 15 = 0 \Rightarrow 115 + \frac{p_2}{2} + w_i = 2p_1 \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{R_1(p_2): p_1 = 57.5 + \frac{w_i}{2} + \frac{p_2}{4}}$$
+
+Función de mejor respuesta de la firma D2:
+$$\Pi^D_2 = \Big( p_2 - c_2 \Big) q_2 = \Big( p_2 - w_i - 15 \Big) \Big( 100 - p_2 + \frac{p_1}{2} \Big)$$
+$$\frac{\partial \Pi^D_2}{\partial p_2} = \Big( 100 - p_2 + \frac{p_1}{2} \Big) + \Big( p_2 - w_i - 15 \Big) (-1) = 0 \Rightarrow$$
+$$\Rightarrow 100 - p_2 + \frac{p_1}{2} - p_2 + w_i + 15 = 0 \Rightarrow 115 + \frac{p_1}{2} + w_i = 2p_2 \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{R_2(p_1): p_2 = 57.5 + \frac{w_i}{2} + \frac{p_1}{4}}$$
+
+Intersectando ambas FMR obtenemos:
+$$p_1^* = 57.5 + \frac{w_i}{2} + \frac{1}{4} \Big( 57.5 + \frac{w_i}{2} + \frac{p_1^*}{4} \Big) = 71.875 + \frac{5}{8} \, w_i + \frac{p_1^*}{16} \Rightarrow$$
+$$\Rightarrow \frac{15}{16} \, p_1^* = 71.875 + \frac{5}{8} \, w_i \Rightarrow p_1^* = \frac{16}{15} \Big( 71.875 + \frac{5}{8} \, w_i \Big) \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{p_1^* = \frac{230}{3} + \frac{2}{3} \, w_i}$$
+
+Resolviendo $R_2(p_1^*)$ obtenemos que:
+$$\color{blue}\boxed{p_2^* = \frac{230}{3} + \frac{2}{3} \, w_i}$$
+
+\newpage
+
+Evaluando en las funciones de demanda de cada uno de los respectivos mercados, obtenemos:
+$$q_1^*(p_1^*;p_2^*) = 100 - p_1^* + \frac{p_2^*}{2} = 100 - \left( \frac{230}{3} + \frac{2}{3} \, w_i \right) + \frac{1}{2} \left( \frac{230}{3} + \frac{2}{3} \, w_i \right) = $$
+$$= 100 - \frac{230}{3} - \frac{2}{3} \, w_i  + \frac{230}{6} + \frac{2}{6} \, w_i \Rightarrow \color{blue}\boxed{q_1^* = \frac{185 - w_i}{3}}$$
+
+$$q_2^*(p_1^*;p_2^*) = 100 - p_2^* + \frac{p_1^*}{2} = 100 - \left( \frac{230}{3} + \frac{2}{3} \, w_i \right) + \frac{1}{2} \left( \frac{230}{3} + \frac{2}{3} \, w_i \right) = $$
+$$= 100 - \frac{230}{3} - \frac{2}{3} \, w_i  + \frac{230}{6} + \frac{2}{6} \, w_i \Rightarrow \color{blue}\boxed{q_2^* = \frac{185 - w_i}{3}}$$
+
+Los beneficios de equilibrio serán:
+$$\Pi_1^D = \left( \frac{230 + 2w_i}{3} - w_i - 15 \right) \left( \frac{185-w_i}{3} \right) = \left( \frac{230+2w_i-3w_i-45}{3} \right) \left( \frac{185-w_i}{3} \right) \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{\Pi_1^D = \left( \frac{185-w_i}{3}\right)^2}$$
+
+$$\Pi_2^D = \left( \frac{230 + 2w_i}{3} - w_i - 15 \right) \left( \frac{185-w_i}{3} \right) = \left( \frac{230+2w_i-3w_i-45}{3} \right) \left( \frac{185-w_i}{3} \right) \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{\Pi_2^D = \left( \frac{185-w_i}{3}\right)^2}$$
+
+\item Si las empresas upstream compiten en precios, entonces:
+$$P^U = MC_j^U \Rightarrow w_j = MC_j^U \Rightarrow \color{blue}\boxed{w_j = 10}$$
+
+Por lo tanto:
+$$\color{blue}\boxed{q_1^* = q_2^* = \frac{175}{3}}$$
+$$\color{blue}\boxed{p_1^* = p_2^* = \frac{250}{3}}$$
+$$\color{blue}\boxed{\Pi_1^U = \Pi_2^U = 0}$$
+$$\color{blue}\boxed{\Pi_1^D = \Pi_2^D = \left( \frac{175}{3} \right)^2 }$$
+
+\item Demanda derivada por U2 luego de la fusión. \\
+
+Función de mejor respusta de la firma fusionada U1-D1:
+$$\Pi_1 = \Big( p_1 - c_1 \Big) q_1(p_1;p_2) = \Big( p_1 - 25 \Big) \Big( 100 - p_1 + \frac{p_2}{2} \Big)$$
+$$\frac{\partial \Pi_1}{\partial p_1} = \Big( 100 - p_1 + \frac{p_2}{2} \Big) + \Big( p_1 - 25 \Big) (-1) = 0 \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{R_1(p_2):p_1 = \frac{125 + 0.5p_2}{2}}$$
+
+Función de mejor respuesta de la empresa D2:
+$$\Pi^D_2 = \Big( p_2 - c_2 \Big) q_2 = \Big( p_2 - w_2 - 15 \Big) \Big( 100 - p_2 + \frac{p_1}{2} \Big)$$
+$$\frac{\partial \Pi^D_2}{\partial p_2} = \Big( 100 - p_2 + \frac{p_1}{2} \Big) + \Big( p_2 - w_2 - 15 \Big) (-1) = 0 \Rightarrow$$
+$$\Rightarrow 100 - p_2 + \frac{p_1}{2} - p_2 + w_2 + 15 = 0 \Rightarrow 115 + \frac{p_1}{2} + w_2 = 2p_2 \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{R_2(p_1): p_2 = 57.5 + \frac{w_2}{2} + \frac{p_1}{4}}$$
+
+Intersectando ambas FMR obtenemos:
+$$p_1^* = 62.5 + \frac{1}{4} \left( 57.5 + \frac{w_2}{2} + \frac{p_1^*}{4} \right) = 76.875 + \frac{w_2}{8} + \frac{p_1^*}{16} \Rightarrow$$
+$$\Rightarrow \frac{15}{16} \, p_1^* = 76.875 + \frac{w_2}{8} \Rightarrow p_1^* = \frac{16}{15} \left( 76.875 + \frac{w_2}{8} \right) \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{p_1^* = 82 + \frac{2}{15} \, w_2}$$
+
+$$p_2^* = 57.5 + \frac{w_2}{2} + \frac{1}{4} \left( 82 + \frac{2}{15} \, w_2\right) = 57.5 + \frac{w_2}{2} + 20.5 + \frac{w_2}{30} \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{p_2^* = 78 + \frac{8}{15} \, w_2}$$
+
+Evaluando ambos precios en la demanda que enfrenta D2 podemos obtener la demanda derivada que enfrenta U2:
+$$q_2^D(p_1^*;p_2^*) = 100 - \left( 78 + \frac{8}{15} \, w_2 \right) + \frac{1}{2} \left( 82 + \frac{2}{15} \, w_2 \right) = 100 - 78 - \frac{8}{15} \, w_2 + 41 + \frac{1}{15} \, w_2 \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{q_2^U(w_2) = 63 - \frac{7}{15} \, w_2}$$
+
+\item U2 quedó como firma monopólica en el mercado upstream, vendiendole a D2 en el mercado downstream. \\
+
+Comenzamos hallando la demanda derivada inversa que enfrenta U2:
+$$q_2^U(w_2) = 63 - \frac{7}{15} \, w_2 \Rightarrow \frac{7}{15} \, w_2 = 63 - q_2^U \Rightarrow \frac{15}{7} \Big( 63 - q_2^U \Big) \Rightarrow$$
+$$\Rightarrow \color{blue}\boxed{w_2(q_2^U) = 135 - \frac{15}{7} \, q_2^U}$$
+
+U2 igual ingreso marginal a costo marginal:
+$$MR^U_2 = MC^U_2 \Rightarrow 135 - \frac{30}{7} \, q_2^U = 10 \Rightarrow 125 = \frac{30}{7} \, q_2^U \Rightarrow \color{blue}\boxed{q_2^{U^*} = \frac{175}{6}} \color{black}\Rightarrow \color{blue}\boxed{w_2^* = \frac{145}{2}}$$ 
+
+\item Ahora podemos volver al mercado downstream y evaluar en función del valor hallado para $w_2$.
+
+\begin{center}
+	\begin{tabular}{c c}
+	$\color{blue}\boxed{p_1^* = \frac{275}{3}}$ & $\color{blue}\boxed{p_2^* = \frac{350}{3}}$ \\
+	\\
+	$\color{blue}\boxed{q_1^* = \frac{400}{6}}$ & $\color{blue}\boxed{q_2^* = \frac{175}{6}}$ \\
+	\\	
+	$\color{blue}\boxed{\Pi_1 = \left( \frac{400}{6} \right)^2}$ & $\color{blue}\boxed{\Pi_2 = \left( \frac{175}{6} \right)^2}$ 
+	\end{tabular}
+\end{center}
+
+\item Comparación de beneficios de las empresas downstream:
+\begin{center}
+	\begin{tabular}{>{\centering\arraybackslash} m{2.5cm} | >{\centering\arraybackslash} m{2cm} | >{\centering\arraybackslash} m{2cm}}
+	& \textbf{D1} & \textbf{D2} \\
+	\hline
+	\textbf{Antes de la fusión} & $\left(\frac{350}{6}\right)^2$ & $\left(\frac{350}{6}\right)^2$ \\
+	\hline
+	\textbf{Después de la fusión} & $\left(\frac{400}{6}\right)^2$ & $\left(\frac{175}{6}\right)^2$ \\
+	\end{tabular}
+\end{center}
+
+\newpage
+
+En cuanto a los consumidores, los mismos pierden excedente, por lo que están peor que antes.
+
+\begin{center}
+	\begin{tabular}{c c}
+	\includegraphics[scale=.25]{imagen2.png}
+	&
+	\includegraphics[scale=.25]{imagen3.png}
+	\end{tabular}
+\end{center}
+
+Pérdida de excedente del consumidor:
+$$PEC = \int_{p_1^0}^{p_1^1} q_1(p_1;p_2) \di p_1 + \int_{p_2^0}^{p_2^1} q_2(p_1;p_2) \di p_2 = $$
+$$= \int_{p_1^0}^{p_1^1} \Big( 100 - p_1 - 0.5p_2 \Big) \di p_1 + \int_{p_2^0}^{p_2^1} \Big( 100 - p_2 + 0.5p_1 \Big) \di p_2 =$$
+$$= \Big(100p_1 - \frac{p_1^2}{2} + \frac{p_1p_2}{2} \Big) \Bigg|_{p_1^0}^{p_1^1} + \Big(100p_2 - \frac{p_2^2}{2} + \frac{p_2p_1}{2} \Big) \Bigg|_{p_2^0}^{p_2^1} = $$
+$$ = \left[ 100 \left(\frac{275}{3}\right) - \frac{1}{2} \left(\frac{275}{3}\right)^2 + \frac{1}{2} \left(\frac{350}{3}\right) \left(\frac{275}{3}\right) \right] - \left[ 100 \left(\frac{250}{3}\right) - \frac{1}{2} \left(\frac{250}{3}\right)^2 + \frac{1}{2} \left(\frac{250}{3}\right)^2 \right] + $$
+$$ + \left[ 100 \left(\frac{350}{3}\right) - \frac{1}{2} \left(\frac{350}{3}\right)^2 + \frac{1}{2} \left(\frac{350}{3}\right) \left(\frac{275}{3}\right) \right] - \left[ 100 \left(\frac{250}{3}\right) - \frac{1}{2} \left(\frac{250}{3}\right)^2 + \frac{1}{2} \left(\frac{250}{3}\right)^2 \right] = $$
+$$= \left[ \frac{20\,625}{2} - \frac{25\,000}{3} \right] + \left[\frac{30\,625}{3} - \frac{25\,000}{3} \right] =$$
+$$= \frac{11\,875}{6} + 1875 =$$
+$$= \frac{23\,125}{6} \approx 3\,854,17$$
+	
+
+\end{enumerate}
+\end{exercise}
+
+\end{document}
